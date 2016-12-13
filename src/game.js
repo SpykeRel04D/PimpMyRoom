@@ -195,7 +195,7 @@ game.state.add('play', {
         }
 
         this.clickTextPool = this.add.group();
-        var clickText;
+        this.clickText;
         for (var d=0; d<50; d++) {
             clickText = this.add.text(0, 0, '1', {
                 font: '64px Arial Black',
@@ -204,17 +204,17 @@ game.state.add('play', {
             });
             clickText.anchor.setTo(0.5,0.5);
             clickText.exists = false;
-            clickText.tween = game.add.tween(clickText)
+            clickText.tween = game.add.tween(this.clickText)
                 .to({
                     alpha: 0,
                     y: 20,
                     x: 700
                 }, 1000, Phaser.Easing.Cubic.Out);
 
-            clickText.tween.onComplete.add(function(text, tween) {
+            this.clickText.tween.onComplete.add(function(text, tween) {
                 text.kill();
             });
-            this.clickTextPool.add(clickText);
+            this.clickTextPool.add(this.clickText);
         }
 
         //Max Front Layer
@@ -507,10 +507,10 @@ game.state.add('play', {
 
             this.upClickUI.text = 'Price: ' + Math.round(this.upClickData.price) + '$';
 
-            if (this.upClickData.level == 10) clickText.fill = '#33ccff';
-            if (this.upClickData.level == 19) clickText.fill = '#ff0000';
-            if (this.upClickData.level == 29) clickText.fill = '#00ff00';
-            if (this.upClickData.level == 39) clickText.fill = '#ffff00';
+            if (this.upClickData.level == 10) this.clickText.fill = '#33ccff';
+            if (this.upClickData.level == 19) this.clickText.fill = '#ff0000';
+            if (this.upClickData.level == 29) this.clickText.fill = '#00ff00';
+            if (this.upClickData.level == 39) this.clickText.fill = '#ffff00';
         }
     },
     overUpClick: function(furniture, pointer) {
