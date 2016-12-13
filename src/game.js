@@ -109,21 +109,21 @@ game.state.add('play', {
         this.player = {
             clicks: 1,              //DPS
             moneySec: 1,            //Money per second
-            money: 300,             //Player money
+            money: 1,             //Player money
         };
 
         // Buttons List (in Order)
         this.shopData = [
-            {name: 'Carpet', base: 100, price: 100, level: 0, dps : 0, sprite: 'none', texture01: 'alfombra01', texture02: 'alfombra02', texture03: 'alfombra03', texture04: 'alfombra04'},
-            {name: 'Painting', base: 150, price: 150, level: 0, dps : 0, sprite: 'none', texture01: 'quadre01', texture02: 'quadre02', texture03: 'quadre03', texture04: 'quadre04'},
-            {name: 'Closet', base: 200, price: 200, level: 0, dps : 0, sprite: 'none', texture01: 'armari01', texture02: 'armari02', texture03: 'armari03', texture04: 'armari04'},
-            {name: 'Lamp', base: 250, price: 250, level: 0, dps : 0, sprite: 'none', texture01: 'lampara01', texture02: 'lampara02', texture03: 'lampara03', texture04: 'lampara04'},
-            {name: 'Door', base: 300, price: 300, level: 0, dps : 0, sprite: 'none', texture01: 'door01', texture02: 'door02', texture03: 'door03', texture04: 'door04'},
-            {name: 'Desk', base: 350, price: 350, level: 0, dps : 0, sprite: 'none', texture01: 'desk01', texture02: 'desk02', texture03: 'desk03', texture04: 'desk04'},
-            {name: 'Rack', base: 400, price: 400, level: 0, dps : 0, sprite: 'none', texture01: 'estanteria01', texture02: 'estanteria02', texture03: 'estanteria03', texture04: 'estanteria04'},
-            {name: 'Bed', base: 450, price: 450, level: 0, dps : 0, sprite: 'none', texture01: 'llit01', texture02: 'llit02', texture03: 'llit03', texture04: 'llit04'},
-            {name: 'Ceiling Lamp', base: 500, price: 500, level: 0, dps : 0, sprite: 'none', texture01: 'lampSostre01', texture02: 'lampSostre02', texture03: 'lampSostre03', texture04: 'lampSostre04'},
-            {name: 'Wall', base: 550, price: 550, level: 0, dps : 0, sprite: 'none', texture01: 'wall01', texture02: 'wall02', texture03: 'wall03', texture04: 'wall04'},
+            {name: 'Carpet', base: 10, price: 10, level: 0, dps : 0, bdps:0.1, sprite: 'none', texture01: 'alfombra01', texture02: 'alfombra02', texture03: 'alfombra03', texture04: 'alfombra04'},
+            {name: 'Painting', base: 67, price: 67, level: 0, dps : 0, bdps:1, sprite: 'none', texture01: 'quadre01', texture02: 'quadre02', texture03: 'quadre03', texture04: 'quadre04'},
+            {name: 'Closet', base: 350, price: 350, level: 0, dps : 0, bdps:8, sprite: 'none', texture01: 'armari01', texture02: 'armari02', texture03: 'armari03', texture04: 'armari04'},
+            {name: 'Lamp', base: 1800, price: 1800, level: 0, dps : 0, bdps:52, sprite: 'none', texture01: 'lampara01', texture02: 'lampara02', texture03: 'lampara03', texture04: 'lampara04'},
+            {name: 'Door', base: 10350, price: 10350, level: 0, dps : 0, bdps:315, sprite: 'none', texture01: 'door01', texture02: 'door02', texture03: 'door03', texture04: 'door04'},
+            {name: 'Desk', base: 66600, price: 666000, level: 0, dps : 0, bdps:1675, sprite: 'none', texture01: 'desk01', texture02: 'desk02', texture03: 'desk03', texture04: 'desk04'},
+            {name: 'Rack', base: 350350, price: 350350, level: 0, dps : 0, bdps:7900, sprite: 'none', texture01: 'estanteria01', texture02: 'estanteria02', texture03: 'estanteria03', texture04: 'estanteria04'},
+            {name: 'Bed', base: 1000000, price: 1000000, level: 0, dps : 0, bdps:51000, sprite: 'none', texture01: 'llit01', texture02: 'llit02', texture03: 'llit03', texture04: 'llit04'},
+            {name: 'Ceiling Lamp', base: 5000000, price: 5000000, level: 0, bdps:312000, dps : 0, sprite: 'none', texture01: 'lampSostre01', texture02: 'lampSostre02', texture03: 'lampSostre03', texture04: 'lampSostre04'},
+            {name: 'Wall', base: 150000000, price: 150000000, level: 0, dps : 0, bdps:2000000, sprite: 'none', texture01: 'wall01', texture02: 'wall02', texture03: 'wall03', texture04: 'wall04'},
         ];
 
         this.upClickData = {
@@ -135,8 +135,8 @@ game.state.add('play', {
 
         this.upMeteoriteData = {
             level: 1,
-            price: 400,
-            base: 400,
+            price: 50,
+            base: 50,
             name: 'Upgrade Meteorite Production',
         };
 
@@ -556,7 +556,7 @@ game.state.add('play', {
             this.bulletM.play();
             this.player.money = this.player.money - this.shopData[param].price;
             this.shopData[param].level += 1;
-            this.shopData[param].dps += 1;
+            this.shopData[param].dps += this.shopData[param].bdps;
             this.shopData[param].price = this.shopData[param].base * Math.pow(1.15 , this.shopData[param].level)
 
             // Update all prices
