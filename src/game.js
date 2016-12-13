@@ -195,7 +195,7 @@ game.state.add('play', {
         }
 
         this.clickTextPool = this.add.group();
-        this.clickText;
+        var clickText;
         for (var d=0; d<50; d++) {
             clickText = this.add.text(0, 0, '1', {
                 font: '64px Arial Black',
@@ -204,17 +204,17 @@ game.state.add('play', {
             });
             clickText.anchor.setTo(0.5,0.5);
             clickText.exists = false;
-            clickText.tween = game.add.tween(this.clickText)
+            clickText.tween = game.add.tween(clickText)
                 .to({
                     alpha: 0,
                     y: 20,
                     x: 700
                 }, 1000, Phaser.Easing.Cubic.Out);
 
-            this.clickText.tween.onComplete.add(function(text, tween) {
+            clickText.tween.onComplete.add(function(text, tween) {
                 text.kill();
             });
-            this.clickTextPool.add(this.clickText);
+            this.clickTextPool.add(clickText);
         }
 
         //Max Front Layer
@@ -435,12 +435,12 @@ game.state.add('play', {
         this.player.money += this.player.clicks;
         this.moneyUI.text = 'Money: ' + Math.round(this.player.money) + '$';
 
-        var clickText = this.clickTextPool.getFirstExists(false);
-        if (clickText) {
-            clickText.text = this.player.clicks;
-            clickText.reset(pointer.positionDown.x, pointer.positionDown.y);
-            clickText.alpha = 1;
-            clickText.tween.start();
+        this.clickText = this.clickTextPool.getFirstExists(false);
+        if (this.clickText) {
+            this.clickText.text = this.player.clicks;
+            this.clickText.reset(pointer.positionDown.x, pointer.positionDown.y);
+            this.clickText.alpha = 1;
+            this.clickText.tween.start();
         }
     },
     onPimp: function(pimp, pointer) {
