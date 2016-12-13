@@ -4,7 +4,7 @@ game.state.add('play', {
     preload: function() {
 
         this.game.scale.pageAlignHorizontally = true;this.game.scale.pageAlignVertically = true;this.game.scale.refresh();
-        
+
         this.old = new Date();
         this.old = this.old.getTime();
         this.shopOpen = false;
