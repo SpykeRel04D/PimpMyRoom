@@ -532,7 +532,7 @@ game.state.add('play', {
             this.upMeteoriteData.level += 1;
             this.upMeteoriteData.price = this.upMeteoriteData.base * Math.pow(1.15 , this.upMeteoriteData.level)
 
-            this.upMeteoriteUI.text = 'Price: ' + Math.round(this.upMeteoriteData.price) + '$';
+            this.upMeteoriteUI.text = 'Price: ' + Math.round(this.upMeteoriteData.price.toExponential(3)) + '$';
 
             if (this.upMeteoriteData.level == 5) this.meteorite.loadTexture('meteorite02', 0, false);
             if (this.upMeteoriteData.level == 10) this.meteorite.loadTexture('meteorite03', 0, false);
@@ -560,16 +560,16 @@ game.state.add('play', {
             this.shopData[param].price = this.shopData[param].base * Math.pow(1.15 , this.shopData[param].level)
 
             // Update all prices
-            this.alfombraText.text = 'Price: ' + Math.round(this.shopData[0].price) + '$';
-            this.quadreText.text = 'Price: ' + Math.round(this.shopData[1].price) + '$';
-            this.armariText.text = 'Price: ' + Math.round(this.shopData[2].price) + '$';
-            this.lamparaText.text = 'Price: ' + Math.round(this.shopData[3].price) + '$';
-            this.doorText.text = 'Price: ' + Math.round(this.shopData[4].price) + '$';
-            this.deskText.text = 'Price: ' + Math.round(this.shopData[5].price) + '$';
-            this.estanteriaText.text = 'Price: ' + Math.round(this.shopData[6].price) + '$';
-            this.llitText.text = 'Price: ' + Math.round(this.shopData[7].price) + '$';
-            this.lampSostreText.text = 'Price: ' + Math.round(this.shopData[8].price) + '$';
-            this.wallText.text = 'Price: ' + Math.round(this.shopData[9].price) + '$';
+            this.alfombraText.text = 'Price: ' + Math.round(this.shopData[0].price.toExponential(3)) + '$';
+            this.quadreText.text = 'Price: ' + Math.round(this.shopData[1].price.toExponential(3)) + '$';
+            this.armariText.text = 'Price: ' + Math.round(this.shopData[2].price.toExponential(3)) + '$';
+            this.lamparaText.text = 'Price: ' + Math.round(this.shopData[3].price.toExponential(3)) + '$';
+            this.doorText.text = 'Price: ' + Math.round(this.shopData[4].price.toExponential(3)) + '$';
+            this.deskText.text = 'Price: ' + Math.round(this.shopData[5].price.toExponential(3)) + '$';
+            this.estanteriaText.text = 'Price: ' + Math.round(this.shopData[6].price.toExponential(3)) + '$';
+            this.llitText.text = 'Price: ' + Math.round(this.shopData[7].price.toExponential(3)) + '$';
+            this.lampSostreText.text = 'Price: ' + Math.round(this.shopData[8].price.toExponential(3)) + '$';
+            this.wallText.text = 'Price: ' + Math.round(this.shopData[9].price.toExponential(3)) + '$';
         }
 
         if (this.shopData[param].level == 1) this.shopData[param].sprite.visible = true;
