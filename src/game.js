@@ -177,7 +177,7 @@ game.state.add('play', {
             }
         }
 
-        this.moneyUI = this.game.add.text(575,13, 'Money: ' + Math.round(this.player.money.toExponential()) + '$', {font: '22px Arial Black'});
+        this.moneyUI = this.game.add.text(575,13, 'Money: ' + Math.round(this.player.money.toExponential(3)) + '$', {font: '22px Arial Black'});
 
         // Click meteorite
         this.meteorite = state.game.add.sprite(0, 0, 'meteorite01');
@@ -229,7 +229,7 @@ game.state.add('play', {
         this.upClick.events.onInputOver.add(state.overUpClick, state);
         this.upClick.events.onInputOut.add(state.outUpClick, state);
 
-        this.upClickUI = this.game.add.text(175,450, 'Price: ' + Math.round(this.upClickData.price.toExponential()) + '$', {font: '22px Arial Black'});
+        this.upClickUI = this.game.add.text(175,450, 'Price: ' + Math.round(this.upClickData.price.toExponential(3)) + '$', {font: '22px Arial Black'});
         this.upClickUI.visible = false;
 
         this.upMeteorite = state.game.add.sprite(550,300,'up_meteorite');
@@ -240,7 +240,7 @@ game.state.add('play', {
         this.upMeteorite.events.onInputOver.add(state.overUpMeteor, state);
         this.upMeteorite.events.onInputOut.add(state.outUpMeteor, state);
 
-        this.upMeteoriteUI = this.game.add.text(475,450, 'Price: ' + Math.round(this.upMeteoriteData.price.toExponential()) + '$', {font: '22px Arial Black'});
+        this.upMeteoriteUI = this.game.add.text(475,450, 'Price: ' + Math.round(this.upMeteoriteData.price.toExponential(3)) + '$', {font: '22px Arial Black'});
         this.upMeteoriteUI.visible = false;
 
         // Call Events
@@ -268,7 +268,7 @@ game.state.add('play', {
         this.buttonAlfombra.events.onInputDown.add(state.onBuyFurniture, state, 0, 0);
         this.buttonAlfombra.events.onInputOver.add(state.overBuyFurniture, state, 0, 0);
         this.buttonAlfombra.events.onInputOut.add(state.outBuyFurniture, state, 0, 0);
-        this.alfombraText = this.game.add.text(160,270, 'Price: ' + Math.round(this.shopData[0].price.toExponential()) + '$', {font: '11px Arial Black'});
+        this.alfombraText = this.game.add.text(160,270, 'Price: ' + Math.round(this.shopData[0].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonAlfombra);
         this.buttonsPool.add(this.alfombraText);
 
@@ -277,7 +277,7 @@ game.state.add('play', {
         this.buttonQuadre.events.onInputDown.add(state.onBuyFurniture, state, 0, 1);
         this.buttonQuadre.events.onInputOver.add(state.overBuyFurniture, state, 0, 1);
         this.buttonQuadre.events.onInputOut.add(state.outBuyFurniture, state, 0, 1);
-        this.quadreText = this.game.add.text(360,270, 'Price: ' + Math.round(this.shopData[1].price.toExponential()) + '$', {font: '11px Arial Black'});
+        this.quadreText = this.game.add.text(360,270, 'Price: ' + Math.round(this.shopData[1].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonQuadre);
         this.buttonsPool.add(this.quadreText);
 
@@ -286,7 +286,7 @@ game.state.add('play', {
         this.buttonArmari.events.onInputDown.add(state.onBuyFurniture, state, 0, 2);
         this.buttonArmari.events.onInputOver.add(state.overBuyFurniture, state, 0, 2);
         this.buttonArmari.events.onInputOut.add(state.outBuyFurniture, state, 0, 2);
-        this.armariText = this.game.add.text(460,270, 'Price: ' + Math.round(this.shopData[2].price.toExponential()) + '$', {font: '11px Arial Black'});
+        this.armariText = this.game.add.text(460,270, 'Price: ' + Math.round(this.shopData[2].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonArmari);
         this.buttonsPool.add(this.armariText);
 
@@ -295,7 +295,7 @@ game.state.add('play', {
         this.buttonLampara.events.onInputDown.add(state.onBuyFurniture, state, 0, 3);
         this.buttonLampara.events.onInputOver.add(state.overBuyFurniture, state, 0, 3);
         this.buttonLampara.events.onInputOut.add(state.outBuyFurniture, state, 0, 3);
-        this.lamparaText = this.game.add.text(260,270, 'Price: ' + Math.round(this.shopData[3].price.toExponential()) + '$', {font: '11px Arial Black'});
+        this.lamparaText = this.game.add.text(260,270, 'Price: ' + Math.round(this.shopData[3].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonLampara);
         this.buttonsPool.add(this.lamparaText);
 
@@ -304,7 +304,7 @@ game.state.add('play', {
         this.buttonDoor.events.onInputDown.add(state.onBuyFurniture, state, 0, 4);
         this.buttonDoor.events.onInputOver.add(state.overBuyFurniture, state, 0, 4);
         this.buttonDoor.events.onInputOut.add(state.outBuyFurniture, state, 0, 4);
-        this.doorText = this.game.add.text(560,270, 'Price: ' + Math.round(this.shopData[4].price.toExponential()) + '$', {font: '11px Arial Black'});
+        this.doorText = this.game.add.text(560,270, 'Price: ' + Math.round(this.shopData[4].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonDoor);
         this.buttonsPool.add(this.doorText);
 
@@ -313,7 +313,7 @@ game.state.add('play', {
         this.buttonDesk.events.onInputDown.add(state.onBuyFurniture, state, 0, 5);
         this.buttonDesk.events.onInputOver.add(state.overBuyFurniture, state, 0, 5);
         this.buttonDesk.events.onInputOut.add(state.outBuyFurniture, state, 0, 5);
-        this.deskText = this.game.add.text(160,390, 'Price: ' + Math.round(this.shopData[5].price.toExponential()) + '$', {font: '11px Arial Black'});
+        this.deskText = this.game.add.text(160,390, 'Price: ' + Math.round(this.shopData[5].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonDesk);
         this.buttonsPool.add(this.deskText);
 
@@ -322,7 +322,7 @@ game.state.add('play', {
         this.buttonEstanteria.events.onInputDown.add(state.onBuyFurniture, state, 0, 6);
         this.buttonEstanteria.events.onInputOver.add(state.overBuyFurniture, state, 0, 6);
         this.buttonEstanteria.events.onInputOut.add(state.outBuyFurniture, state, 0, 6);
-        this.estanteriaText = this.game.add.text(260,390, 'Price: ' + Math.round(this.shopData[6].price.toExponential()) + '$', {font: '11px Arial Black'});
+        this.estanteriaText = this.game.add.text(260,390, 'Price: ' + Math.round(this.shopData[6].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonEstanteria);
         this.buttonsPool.add(this.estanteriaText);
 
@@ -331,7 +331,7 @@ game.state.add('play', {
         this.buttonLlit.events.onInputDown.add(state.onBuyFurniture, state, 0, 7);
         this.buttonLlit.events.onInputOver.add(state.overBuyFurniture, state, 0, 7);
         this.buttonLlit.events.onInputOut.add(state.outBuyFurniture, state, 0, 7);
-        this.llitText = this.game.add.text(360,390, 'Price: ' + Math.round(this.shopData[7].price.toExponential()) + '$', {font: '11px Arial Black'});
+        this.llitText = this.game.add.text(360,390, 'Price: ' + Math.round(this.shopData[7].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonLlit);
         this.buttonsPool.add(this.llitText);
 
@@ -340,7 +340,7 @@ game.state.add('play', {
         this.buttonLampSostre.events.onInputDown.add(state.onBuyFurniture, state, 0, 8);
         this.buttonLampSostre.events.onInputOver.add(state.overBuyFurniture, state, 0, 8);
         this.buttonLampSostre.events.onInputOut.add(state.outBuyFurniture, state, 0, 8);
-        this.lampSostreText = this.game.add.text(460,390, 'Price: ' + Math.round(this.shopData[8].price.toExponential()) + '$', {font: '11px Arial Black'});
+        this.lampSostreText = this.game.add.text(460,390, 'Price: ' + Math.round(this.shopData[8].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonLampSostre);
         this.buttonsPool.add(this.lampSostreText);
 
@@ -349,7 +349,7 @@ game.state.add('play', {
         this.buttonWall.events.onInputDown.add(state.onBuyFurniture, state, 0, 9);
         this.buttonWall.events.onInputOver.add(state.overBuyFurniture, state, 0, 9);
         this.buttonWall.events.onInputOut.add(state.outBuyFurniture, state, 0, 9);
-        this.wallText = this.game.add.text(560,390, 'Price: ' + Math.round(this.shopData[9].price.toExponential()) + '$', {font: '11px Arial Black'});
+        this.wallText = this.game.add.text(560,390, 'Price: ' + Math.round(this.shopData[9].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonWall);
         this.buttonsPool.add(this.wallText);
 
@@ -375,7 +375,7 @@ game.state.add('play', {
             this.player.money += this.shopData[i].dps;
         }
 
-        this.moneyUI.text = 'Money: ' + Math.round(this.player.money.toExponential()) + '$';
+        this.moneyUI.text = 'Money: ' + Math.round(this.player.money.toExponential(3)) + '$';
 
         if (this.upMeteoriteData.price > this.player.money) this.upMeteoriteUI.fill = '#6E6E6E';
         else this.upMeteoriteUI.fill = '#000000';
@@ -433,7 +433,7 @@ game.state.add('play', {
     onClickableArea: function(meteorite, pointer) {
         this.meteorM.play();
         this.player.money += this.player.clicks;
-        this.moneyUI.text = 'Money: ' + Math.round(this.player.money.toExponential()) + '$';
+        this.moneyUI.text = 'Money: ' + Math.round(this.player.money.toExponential(3)) + '$';
 
         var clickText = this.clickTextPool.getFirstExists(false);
         if (clickText) {
