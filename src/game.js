@@ -177,7 +177,7 @@ game.state.add('play', {
             }
         }
 
-        this.moneyUI = this.game.add.text(575,13, 'Money: ' + Math.round(this.player.money.toExponential(2)) + '$', {font: '22px Arial Black'});
+        this.moneyUI = this.game.add.text(575,13, 'Money: ' + Math.round(this.player.money).toExponential(2)) + '$', {font: '22px Arial Black'});
 
         // Click meteorite
         this.meteorite = state.game.add.sprite(0, 0, 'meteorite01');
@@ -375,7 +375,7 @@ game.state.add('play', {
             this.player.money += this.shopData[i].dps;
         }
 
-        this.moneyUI.text = 'Money: ' + Math.round(this.player.money.toExponential(2)) + '$';
+        this.moneyUI.text = 'Money: ' + Math.round(this.player.money).toExponential(2)) + '$';
 
         if (this.upMeteoriteData.price > this.player.money) this.upMeteoriteUI.fill = '#6E6E6E';
         else this.upMeteoriteUI.fill = '#000000';
@@ -433,7 +433,7 @@ game.state.add('play', {
     onClickableArea: function(meteorite, pointer) {
         this.meteorM.play();
         this.player.money += this.player.clicks;
-        this.moneyUI.text = 'Money: ' + Math.round(this.player.money.toExponential(2)) + '$';
+        this.moneyUI.text = 'Money: ' + Math.round(this.player.money).toExponential(2)) + '$';
 
         var clickText = this.clickTextPool.getFirstExists(false);
         if (clickText) {
