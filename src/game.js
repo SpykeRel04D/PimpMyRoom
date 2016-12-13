@@ -195,26 +195,26 @@ game.state.add('play', {
         }
 
         this.clickTextPool = this.add.group();
-        this.clickText2;
+        var clickText;
         for (var d=0; d<50; d++) {
-            this.clickText2 = this.add.text(0, 0, '1', {
+            clickText = this.add.text(0, 0, '1', {
                 font: '64px Arial Black',
                 fill: '#ffffff',
                 strokeThickness: 4
             });
             clickText.anchor.setTo(0.5,0.5);
             clickText.exists = false;
-            clickText.tween = game.add.tween(this.clickText2)
+            clickText.tween = game.add.tween(clickText)
                 .to({
                     alpha: 0,
                     y: 20,
                     x: 700
                 }, 1000, Phaser.Easing.Cubic.Out);
 
-            this.clickText2.tween.onComplete.add(function(text, tween) {
+            clickText.tween.onComplete.add(function(text, tween) {
                 text.kill();
             });
-            this.clickTextPool.add(this.clickText2);
+            this.clickTextPool.add(clickText);
         }
 
         //Max Front Layer
@@ -435,12 +435,12 @@ game.state.add('play', {
         this.player.money += this.player.clicks;
         this.moneyUI.text = 'Money: ' + Math.round(this.player.money) + '$';
 
-        this.clickText = this.clickTextPool.getFirstExists(false);
-        if (this.clickText) {
-            this.clickText.text = this.player.clicks;
-            this.clickText.reset(pointer.positionDown.x, pointer.positionDown.y);
-            this.clickText.alpha = 1;
-            this.clickText.tween.start();
+        var clickText = this.clickTextPool.getFirstExists(false);
+        if (clickText) {
+            clickText.text = this.player.clicks;
+            clickText.reset(pointer.positionDown.x, pointer.positionDown.y);
+            clickText.alpha = 1;
+            clickText.tween.start();
         }
     },
     onPimp: function(pimp, pointer) {
@@ -507,10 +507,10 @@ game.state.add('play', {
 
             this.upClickUI.text = 'Price: ' + Math.round(this.upClickData.price) + '$';
 
-            if (this.upClickData.level == 10) this.clickText.fill = '#33ccff';
-            if (this.upClickData.level == 19) this.clickText.fill = '#ff0000';
-            if (this.upClickData.level == 29) this.clickText.fill = '#00ff00';
-            if (this.upClickData.level == 39) this.clickText.fill = '#ffff00';
+            if (this.upClickData.level == 10) clickText.fill = '#33ccff';
+            if (this.upClickData.level == 19) clickText.fill = '#ff0000';
+            if (this.upClickData.level == 29) clickText.fill = '#00ff00';
+            if (this.upClickData.level == 39) clickText.fill = '#ffff00';
         }
     },
     overUpClick: function(furniture, pointer) {
