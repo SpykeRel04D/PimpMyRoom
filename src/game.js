@@ -272,7 +272,7 @@ game.state.add('play', {
         this.buttonsPool.add(this.buttonAlfombra);
         this.buttonsPool.add(this.alfombraText);
 
-        this.buttonQuadre = state.game.add.sprite(280,220, 'butt_quadre');
+        this.buttonQuadre = state.game.add.sprite(280,200, 'butt_quadre');
         this.buttonQuadre.inputEnabled = true;
         this.buttonQuadre.events.onInputDown.add(state.onBuyFurniture, state, 0, 1);
         this.buttonQuadre.events.onInputOver.add(state.overBuyFurniture, state, 0, 1);
@@ -281,21 +281,21 @@ game.state.add('play', {
         this.buttonsPool.add(this.buttonQuadre);
         this.buttonsPool.add(this.quadreText);
 
-        this.buttonArmari = state.game.add.sprite(480,200, 'butt_armari');
+        this.buttonArmari = state.game.add.sprite(380,200, 'butt_armari');
         this.buttonArmari.inputEnabled = true;
         this.buttonArmari.events.onInputDown.add(state.onBuyFurniture, state, 0, 2);
         this.buttonArmari.events.onInputOver.add(state.overBuyFurniture, state, 0, 2);
         this.buttonArmari.events.onInputOut.add(state.outBuyFurniture, state, 0, 2);
-        this.armariText = this.game.add.text(460,270, 'Price: ' + Math.round(this.shopData[2].price.toExponential(3)) + '$', {font: '11px Arial Black'});
+        this.armariText = this.game.add.text(360,270, 'Price: ' + Math.round(this.shopData[2].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonArmari);
         this.buttonsPool.add(this.armariText);
 
-        this.buttonLampara = state.game.add.sprite(380,320, 'butt_lampara');
+        this.buttonLampara = state.game.add.sprite(480,200, 'butt_lampara');
         this.buttonLampara.inputEnabled = true;
         this.buttonLampara.events.onInputDown.add(state.onBuyFurniture, state, 0, 3);
         this.buttonLampara.events.onInputOver.add(state.overBuyFurniture, state, 0, 3);
         this.buttonLampara.events.onInputOut.add(state.outBuyFurniture, state, 0, 3);
-        this.lamparaText = this.game.add.text(360,270, 'Price: ' + Math.round(this.shopData[3].price.toExponential(3)) + '$', {font: '11px Arial Black'});
+        this.lamparaText = this.game.add.text(460,270, 'Price: ' + Math.round(this.shopData[3].price.toExponential(3)) + '$', {font: '11px Arial Black'});
         this.buttonsPool.add(this.buttonLampara);
         this.buttonsPool.add(this.lamparaText);
 
