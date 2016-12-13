@@ -505,7 +505,7 @@ game.state.add('play', {
             this.upClickData.level += 1;
             this.upClickData.price = this.upClickData.base * Math.pow(1.15 , this.upClickData.level)
 
-            this.upClickUI.text = 'Price: ' + Math.round(this.upClickData.price) + '$';
+            this.upClickUI.text = 'Price: ' + Math.round(this.upClickData.price).toExponential(2) + '$';
 
             if (this.upClickData.level == 10) clickText.fill = '#33ccff';
             if (this.upClickData.level == 19) clickText.fill = '#ff0000';
@@ -543,7 +543,7 @@ game.state.add('play', {
     overUpMeteor: function(furniture, pointer) {
         this.overName.text='Name: ' + this.upMeteoriteData.name;
         this.overLevel.text='Level: ' + this.upMeteoriteData.level;
-        this.overProduce.text='Produce: ' + this.player.moneySec;
+        this.overProduce.text='Produce: ' + Math.round(this.player.moneySec).toExponential(2);
         this.overPool.visible = true;
         this.overPool.x = -160;
     },
@@ -580,7 +580,7 @@ game.state.add('play', {
     overBuyFurniture: function(furniture, pointer, param) {
         this.overName.text='Name: ' + this.shopData[param].name;
         this.overLevel.text='Level: ' + this.shopData[param].level;
-        this.overProduce.text='Produce: ' + this.shopData[param].dps;
+        this.overProduce.text='Produce: ' + Math.round(this.shopData[param].dps).toExponential(2);
         this.overPool.y = 165;
         this.overPool.visible = true;
     },
