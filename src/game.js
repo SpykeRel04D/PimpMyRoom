@@ -195,26 +195,26 @@ game.state.add('play', {
         }
 
         this.clickTextPool = this.add.group();
-        var clickText;
+        this.clickText2;
         for (var d=0; d<50; d++) {
-            clickText = this.add.text(0, 0, '1', {
+            this.clickText2 = this.add.text(0, 0, '1', {
                 font: '64px Arial Black',
                 fill: '#ffffff',
                 strokeThickness: 4
             });
             clickText.anchor.setTo(0.5,0.5);
             clickText.exists = false;
-            clickText.tween = game.add.tween(clickText)
+            clickText.tween = game.add.tween(this.clickText2)
                 .to({
                     alpha: 0,
                     y: 20,
                     x: 700
                 }, 1000, Phaser.Easing.Cubic.Out);
 
-            clickText.tween.onComplete.add(function(text, tween) {
+            this.clickText2.tween.onComplete.add(function(text, tween) {
                 text.kill();
             });
-            this.clickTextPool.add(clickText);
+            this.clickTextPool.add(this.clickText2);
         }
 
         //Max Front Layer
