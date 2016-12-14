@@ -136,8 +136,8 @@ game.state.add('play', {
 
         this.upMeteoriteData = {
             level: 1,
-            price: 50,
-            base: 50,
+            price: 100,
+            base: 100,
             name: 'Upgrade Meteorite Production',
         };
 
