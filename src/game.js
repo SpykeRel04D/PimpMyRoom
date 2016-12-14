@@ -427,7 +427,7 @@ game.state.add('play', {
         localStorage.money = this.player.money;
         localStorage.clicks = this.player.clicks;
         localStorage.moneySec = this.player.moneySec;
-        localStorage.furniture = JSON.stringify(this.shopData.map(function(i){ return {name: i.name, base: i.base, price: i.price, level: i.level, dps : i.dps, texture01: i.texture01, texture02: i.texture02, texture03: i.texture03, texture04: i.texture04}} ));
+        localStorage.furniture = JSON.stringify(this.shopData.map(function(i){ return {name: i.name, base: i.base, price: i.price, level: i.level, dps : i.dps, bdps: i.bdps, texture01: i.texture01, texture02: i.texture02, texture03: i.texture03, texture04: i.texture04}} ));
         localStorage.meteorSave = JSON.stringify(this.upMeteoriteData);
         localStorage.clickSave = JSON.stringify(this.upClickData);
         console.log('Normal Money: ' + this.player.money + ' - Storage: ' + localStorage.money);
