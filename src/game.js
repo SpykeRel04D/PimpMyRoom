@@ -244,7 +244,7 @@ game.state.add('play', {
         this.upMeteoriteUI.visible = false;
 
         // Call Events
-        this.dpsTimer = this.game.time.events.loop(100, this.onDPS, this);
+        this.dpsTimer = this.game.time.events.loop(1000, this.onDPS, this);
         this.saverData = this.game.time.events.loop(1000, this.saveData,this);
 
         var pimp = state.game.add.sprite(290,10, 'pimp');
