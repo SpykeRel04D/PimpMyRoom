@@ -217,6 +217,7 @@ game.state.add('play', {
                 text.kill();
             });
             this.clickTextPool.add(clickText);
+            this.clickTextPool.fill = '#000000'
         }
 
         //Max Front Layer
@@ -430,8 +431,6 @@ game.state.add('play', {
         localStorage.furniture = JSON.stringify(this.shopData.map(function(i){ return {name: i.name, base: i.base, price: i.price, level: i.level, dps : i.dps, bdps: i.bdps, texture01: i.texture01, texture02: i.texture02, texture03: i.texture03, texture04: i.texture04}} ));
         localStorage.meteorSave = JSON.stringify(this.upMeteoriteData);
         localStorage.clickSave = JSON.stringify(this.upClickData);
-        console.log('Normal Money: ' + this.player.money + ' - Storage: ' + localStorage.money);
-        console.log('Test shopData prices, Carpet: ' + this.shopData[0].price);
         localStorage.old = this.old;
     },
     onClickableArea: function(meteorite, pointer) {
