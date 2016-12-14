@@ -92,6 +92,7 @@ game.state.add('play', {
     },
     create: function() {
         var state = this;
+        var needToLoadStorage = false;
 
         this.background = this.game.add.sprite(0,0,'background');
 
@@ -141,6 +142,7 @@ game.state.add('play', {
         };
 
         if ( localStorage.money ){
+            needToLoadStorage = true;
             this.player.money = parseFloat(localStorage.money);
             this.player.clicks = parseFloat(localStorage.clicks);
             this.player.moneySec = parseFloat(localStorage.moneySec);
@@ -184,7 +186,7 @@ game.state.add('play', {
         this.meteorite.inputEnabled = true;
         this.meteorite.events.onInputDown.add(state.onClickableArea, state);
 
-        if ( localStorage.money ){
+        if ( needToLoadStorage ){
             this.upMeteoriteData = JSON.parse(localStorage.meteorSave);
             this.upClickData = JSON.parse(localStorage.clickSave);
 
@@ -423,6 +425,8 @@ game.state.add('play', {
         this.old = new Date();
         this.old = this.old.getTime();
         localStorage.money = this.player.money;
+        console.log('Normal Money: ' + this.player.money + ' - Storage: ' + localStorage.money);
+        console.log('Exponential Money test: ' + Math.round(this.player.money).toExponential(2));
         localStorage.clicks = this.player.clicks;
         localStorage.moneySec = this.player.moneySec;
         localStorage.furniture = JSON.stringify(this.shopData.map(function(i){ return {name: i.name, base: i.base, price: i.price, level: i.level, dps : i.dps, texture01: i.texture01, texture02: i.texture02, texture03: i.texture03, texture04: i.texture04}} ));
