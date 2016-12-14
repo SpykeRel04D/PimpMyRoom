@@ -425,13 +425,13 @@ game.state.add('play', {
         this.old = new Date();
         this.old = this.old.getTime();
         localStorage.money = this.player.money;
-        console.log('Normal Money: ' + this.player.money + ' - Storage: ' + localStorage.money);
-        console.log('Test shopData prices, Carpet: ' + this.shopData[0].price + ' - Storage: ' + localStorage.furniture[0].price);
         localStorage.clicks = this.player.clicks;
         localStorage.moneySec = this.player.moneySec;
         localStorage.furniture = JSON.stringify(this.shopData.map(function(i){ return {name: i.name, base: i.base, price: i.price, level: i.level, dps : i.dps, texture01: i.texture01, texture02: i.texture02, texture03: i.texture03, texture04: i.texture04}} ));
         localStorage.meteorSave = JSON.stringify(this.upMeteoriteData);
         localStorage.clickSave = JSON.stringify(this.upClickData);
+        console.log('Normal Money: ' + this.player.money + ' - Storage: ' + localStorage.money);
+        console.log('Test shopData prices, Carpet: ' + this.shopData[0].price);
         localStorage.old = this.old;
     },
     onClickableArea: function(meteorite, pointer) {
