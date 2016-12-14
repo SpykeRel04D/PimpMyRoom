@@ -217,7 +217,7 @@ game.state.add('play', {
                 text.kill();
             });
             this.clickTextPool.add(clickText);
-            this.clickTextPool.fill = '#000000'
+            this.clickTextPool.fill = '#060606'
         }
 
         //Max Front Layer
