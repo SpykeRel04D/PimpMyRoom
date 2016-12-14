@@ -123,7 +123,7 @@ game.state.add('play', {
             {name: 'Desk', base: 66600, price: 66600, level: 0, dps : 0, bdps:1675, sprite: 'none', texture01: 'desk01', texture02: 'desk02', texture03: 'desk03', texture04: 'desk04'},
             {name: 'Rack', base: 350350, price: 350350, level: 0, dps : 0, bdps:7900, sprite: 'none', texture01: 'estanteria01', texture02: 'estanteria02', texture03: 'estanteria03', texture04: 'estanteria04'},
             {name: 'Bed', base: 1000000, price: 1000000, level: 0, dps : 0, bdps:51000, sprite: 'none', texture01: 'llit01', texture02: 'llit02', texture03: 'llit03', texture04: 'llit04'},
-            {name: 'Ceiling Lamp', base: 5000000, price: 5000000, level: 0, bdps:312000, dps : 0, sprite: 'none', texture01: 'lampSostre01', texture02: 'lampSostre02', texture03: 'lampSostre03', texture04: 'lampSostre04'},
+            {name: 'Ceiling Lamp', base: 5000000, price: 5000000, level: 0,  dps : 0, bdps:312000, sprite: 'none', texture01: 'lampSostre01', texture02: 'lampSostre02', texture03: 'lampSostre03', texture04: 'lampSostre04'},
             {name: 'Wall', base: 150000000, price: 150000000, level: 0, dps : 0, bdps:2000000, sprite: 'none', texture01: 'wall01', texture02: 'wall02', texture03: 'wall03', texture04: 'wall04'},
         ];
 
